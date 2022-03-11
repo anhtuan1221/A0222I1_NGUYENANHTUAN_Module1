@@ -1,0 +1,31 @@
+body {
+    padding: 50px;
+}
+ table {
+     
+    border-collapse: collapse;
+    background-size: cover;
+    width: 100%
+
+ }
+ th,td{
+     border: 1px solid black;
+     padding: 20px;
+ }
+ th {
+     font-family: 'Patua One', cursive;
+     font-size:16px;
+     font-weight: 400ppx;
+     color:aliceblue;
+     text-align:center;
+     background-color:crimson;
+     border-color:aqua;
+ }
+ td {
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 400;
+     color: darkcyan; padding:20px;
+     border-bottom:1px solid;
+     text-align: center;
+ }
+ 

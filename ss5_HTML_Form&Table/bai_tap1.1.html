@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo form đơn giản 1</title>
+    <style>
+        .sothich {
+            color:orange;
+        }
+        .information{
+            color:blue;
+        }
+        #header{
+            width:980px;
+            float:left;
+            background-color: antiquewhite;
+            border-width: 20px;
+            border-style: solid;
+            border-color: aqua;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #meet{
+            text-align: center;
+            background-color:blue;
+            font-size: 30px;
+
+
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="header"> 
+    <form action="bai_tap1.1.html" method="get">
+        <p id="meet">SỞ THÍCH CỦA BẠN</p>
+        <table>
+          
+            <tr>
+                <td><label for="txtname"><span class="information">Họ và tên</span></label></td>
+                <td><input type="text" name="yourname" size="50" id="txtname"></td>
+            </tr>
+            <tr>
+                <td><label for="txtemail"><span class="information">Email</span></label></td>
+                <td><input type="text" name="email" size="30" id="txtemail"></td>
+            </tr>
+        </table>
+            <tr>
+                
+                <td> 
+                    <table>
+                         <tr>
+                            <td> <p class="information">Sở thích<p></td>
+                            <td><span class="sothich"> <input type="checkbox" name="hobby">Thể thao</span></td>
+                            <td><span class="sothich"><input type="checkbox" name="hobby">Âm nhạc</span></td>
+                            <td><span class="sothich"><input type="checkbox" name="hobby">Đọc sách</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="sothich"><input type="checkbox" name="hobby">Lướt web</span></td>
+                            <td><span class="sothich"><input type="checkbox" name="hobby">Chơi game</span></td>
+                            <td><span class="sothich"><input type="checkbox" name="hobby">Điện ảnh</span></td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                            <td><span class="sothich"><input type="checkbox" name="hobby">Du lịch</span></td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td><input type="submit" name ="Submit_Form" value="Gưi thông tin"></td>
+                            <td><input type="reset" value="Nhập lại"></td>
+                         </tr>
+                    </table>
+                </td>
+            </tr>
+       
+    </form>
+    </div>
+</body>
+</html>
