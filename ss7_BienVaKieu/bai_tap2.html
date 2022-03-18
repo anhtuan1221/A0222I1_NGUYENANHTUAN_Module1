@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="dauvao"></td>
+            <td>
+                <select name="" id="from">
+                    <option value="a">VIETNAM</option>
+                    <option value="b">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="to">
+                    <option value="a">VIETNAM</option>
+                    <option value="b">USD</option>
+                </select>
+            </td>
+            <td><button type="button" onclick="convert()">Convert</button></td>
+        </tr>
+    </table>
+    <script>
+        function convert(){
+            let input = document.getElementById('dauvao').value;
+            let from =  document.getElementById('from').value;
+            let to = document.getElementById('to').value;
+            if(from == to){
+                alert(input);
+                }
+            if(from == "a" && to == "b"){
+                alert(input/23000);
+            }
+            if(from == "b" && to == "a"){
+                alert(input*23000);
+            }
+        }
+    </script>
+</body>
+</html>

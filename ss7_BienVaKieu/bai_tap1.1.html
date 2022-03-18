@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+    <script>
+        let input_chemistry = prompt("Nhap diem mon hoa");
+        let input_physics = prompt("Nhap diem mon ly");
+        let input_biology = prompt("nhap diem mon sinh");
+        let chemistry = parseFloat(input_chemistry);
+        let physics = parseFloat(input_physics);
+        let biology = parseFloat(input_biology);
+        let GPA = (chemistry + physics + biology)/3;
+        let total = chemistry + physics + biology;
+        document.write("GPA: " + GPA);
+        document.write("<br/>");
+        document.write("total : " + total);
+    </script>
+</body>
+</html>

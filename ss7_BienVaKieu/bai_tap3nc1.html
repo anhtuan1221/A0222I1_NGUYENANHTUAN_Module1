@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Caculator</h2>
+    <table>
+        <tr>
+            <td colspan="2"><input type="number" value="a" id="col1"></td>
+            <td colspan="2"><input type="number" value="b" id="col2"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add('1')">Addition(+)</button></td>
+            <td><button type="button" onclick="add('2')">Subtraction(-)</button></td>
+            <td><button type="button" onclick="add('3')">Multiplication(*)</button></td>
+            <td><button type="button" onclick="add('4')">Division(/)</button></td>
+        </tr>
+    </table>
+    <p id="123">Result Division:</p>
+    <script>
+        function add(str) {
+            let cot1 = document.getElementById('col1').value;
+            cot1 = parseFloat(cot1);
+            let cot2 = document.getElementById('col2').value;
+             cot2 = parseFloat(cot2);
+           if (str == 1) {
+                kp = cot1 + cot2;
+                let result = document.getElementById('123');
+                result.innerHTML="Result Division:" + kp; 
+            }
+            else if  (str == 2) {
+                kp = cot1 - cot2;
+                let result = document.getElementById('123');
+                result.innerHTML="Result Division:" + kp; 
+            }
+            else if  (str == 3) {
+                kp = cot1 * cot2;
+                let result = document.getElementById('123');
+                result.innerHTML="Result Division:" + kp; 
+            }
+            else if  (str == 4) {
+                kp = cot1 / cot2;
+                let result = document.getElementById('123');
+                result.innerHTML="Result Division:" + kp; 
+             }
+    }
+    </script>
+</body>
+</html>
