@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let soDien = parseFloat(prompt("nhập số điện"));
+        let bac1 = 1.678;
+        let bac2 = 1.734;
+        let bac3 = 2.014;
+        let bac4 = 2.536;
+        let bac5 = 2.834;
+        let bac6 = 2.927;
+        if(soDien <= 50){
+            let tienDien = soDien * bac1;
+            document.write("TIỀN ĐIỆN: " + tienDien +" 000 ĐỒNG")
+        }else if (soDien <= 100){
+            let tienDien = 50 * bac1 + (soDien-50)* bac2;
+            document.write("TIỀN ĐIỆN: " + tienDien +" 000 ĐỒNG")
+        }else if(soDien <= 200){
+            let tienDien = 50 * bac1 + 50 * bac2 + (soDien-100)*bac3;
+            document.write("TIỀN ĐIỆN: " + tienDien +" 000 ĐỒNG")
+        }else if(soDien <= 300){
+            let tienDien = 50 * bac1 + 50 * bac2 + 100*bac3+(soDien-200)*bac4;
+            document.write("TIỀN ĐIỆN: " + tienDien +" 000 ĐỒNG")
+        }else if(soDien <= 400){
+            let tienDien = 50 * bac1 + 50 * bac2 + 100*bac3+100*bac4+(soDien-300)*bac5;
+            document.write("TIỀN ĐIỆN: " + tienDien +" 000 ĐỒNG")
+        }else {
+            let tienDien = 50 * bac1 + 50 * bac2 + 100*bac3+100*bac4+1000*bac5+(soDien-400)*bac6;
+            document.write("TIỀN ĐIỆN: " + tienDien +" 000 ĐỒNG")
+        }
+    </script>
+</body>
+</html>

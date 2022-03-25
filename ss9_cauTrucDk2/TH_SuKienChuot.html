@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện chuột</title>
+</head>
+<body>
+    <img id="myImage" src="https://thuviendohoa.vn/upload/images/items/hinh-anh-qua-bong-vang-png-454.webp">
+    <p>Click button below to move the image to right</p>
+    <button onclick="moverRight()">Click me</button>
+    <script>
+        window.onload = init;
+        function init(){
+            document.getElementById('myImage').style.position = 'relative';
+            document.getElementById('myImage').style.left = '0px';
+        }
+        function moverRight(){
+            document.getElementById('myImage').style.left = 
+            parseInt( document.getElementById('myImage').style.left) + 20 + 'px';
+        }
+    </script>
+</body>
+</html>

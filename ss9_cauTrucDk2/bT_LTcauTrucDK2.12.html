@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="tiengui" placeholder="TIỀN GỬI">
+    <input type="number" id="thanggui" placeholder="SỐ THÁNG GỬI">
+    <input type="number" id="laisuat" placeholder="LÃI SUẤT"> 
+    <button onclick="result()">TÍNH TIỀN LÃI</button>
+    <h3 id="display"></h3>
+    <script>
+        function result(){
+            let a = document.getElementById('tiengui').value;
+            let b = document.getElementById('thanggui').value;
+            let c = document.getElementById('laisuat').value;
+            congthuc = a * b * c/12
+            document.getElementById('display').innerHTML="TIỀN LÃI = " + congthuc; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           let soPhut=parseFloat(prompt("nhập số phút"));
+        let phiCoDinh = 25000;
+       
+        if(soPhut >200){
+            phi = (soPhut-200)*200+150*400+50*600;
+            tong = phi + phiCoDinh;
+            document.write("TỔNG CƯỚC PHÍ = " + tong);
+        }else if (soPhut>50){
+            phi = (soPhut-50)*400+50*600;
+            tong = phi + phiCoDinh;
+            document.write("TỔNG CƯỚC PHÍ = " + tong);
+        }
+        else {
+            phi = soPhut*600;
+            tong = phi + phiCoDinh;
+            document.write("TỔNG CƯỚC PHÍ = " + tong);
+        }
+    </script>
+</body>
+</html>

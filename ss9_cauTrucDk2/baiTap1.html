@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+    <input id="height" type="number" placeholder="HEIGHT">
+    <br><br>
+    <input id="weight" type="number" placeholder="WEIGHT">
+    <h3 id="display">BMI :</h3>
+    <button onclick="abc()">CLICK ME!</button>
+    <script>
+       function abc(){
+        let weight = document.getElementById('weight').value;
+        let height = document.getElementById('height').value;
+        let bmi = weight /( height * height );
+        
+        if(bmi <18.5){
+            document.getElementById('display').innerHTML = "BMI : " + "Underweight";
+        }else if(bmi < 25.0){
+            document.getElementById('display').innerHTML = "BMI : " + "Normal";
+        }else if(bmi < 30.0){ 
+            document.getElementById('display').innerHTML = "BMI : " + "Overweight";
+        }else {
+            document.getElementById('display').innerHTML = "BMI : " + "Obese";
+        }
+
+       }
+    </script>
+</body>
+</html>

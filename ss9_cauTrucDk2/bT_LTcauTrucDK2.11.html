@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tntt = parseFloat(prompt("nhập thu nhập tính thuế"));
+        if(tntt <=5){
+            let stpn = 0.05*tntt*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }else if (tntt<=10){
+            let stpn = (0.1*tntt - 0.25)*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }else if (tntt <= 18){
+            let stpn = (0.15*tntt - 0.75)*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }else if (tntt <=32){
+            let stpn = (0.2*tntt - 1.65)*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }else if (tntt <=52){
+            let stpn = (0.25*tntt - 3.25)*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }else if (tntt <=80){
+            let stpn = (0.3*tntt - 5.85)*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }else {
+            let stpn = (0.35*tntt - 9.85)*1000000;
+            document.write("SỐ THUẾ PHẢI NỘP = " +stpn);
+        }
+    </script>
+</body>
+</html>
