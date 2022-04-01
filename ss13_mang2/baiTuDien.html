@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nhap = prompt("nhập từ cần dịch");
+        let english = ["name", "age", "tree", "note"];
+        let vietnam = ["ten", "tuoi", "cây", "vở"];
+        for (let i = 0; i < english.length;i++) {
+            if(nhap == english[i]){
+                alert(vietnam[i]);
+                break;
+            }else if(nhap == vietnam[i]){
+                alert(english[i]);
+                break;
+            }else if(nhap !== english[i]){
+                alert("không tìm thấy");
+                break;
+            }   
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let canduoi = parseInt(prompt("nhap can duoi"));
+        let cantren = parseInt(prompt("nhap can tren"));
+        let random = Math.floor(Math.random() * (cantren - canduoi + 1) + canduoi );
+        let dem = 0;
+        do{
+            let a = parseInt(prompt("Nhap so ma ban doan"));
+            if (random == a){
+                alert("chuc mung ban ");
+                break;
+            }else if(random > a) {
+                alert("số bạn nhâp nhỏ hơn ");
+                dem++;
+            }else {
+                alert("số bạn nhâp lớn hơn ");
+                dem++;
+            }
+            if(dem >= 3){
+                alert("Bạn đã hết lượt chơi");
+                break;
+            }
+        }while(true);
+
+    </script>
+</body>
+</html>
