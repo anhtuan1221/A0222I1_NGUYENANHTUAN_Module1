@@ -8,14 +8,16 @@
   </head>
   <body>
     <script>
-      let str = "anh-4anh-5anh-6";
-      let count = 0;
-      for (let i = 0; i < str.length; i++) {
-        if (str[i] == "4" || str[i] == "5" || str[i] == "6") {
-          count++;
-        }
+      function giathua(n) {
+        let result = 1;
+        n = parseInt(n);
+        for (let i = 1; i <= n; i++)
+         result *= i;
+        document.write("Gia thừa của " + n + " la " + result);
+        return result;
       }
-      document.write("Số nguyên âm là: " + count);
+      a = prompt("nhap so");
+      giathua(a);
     </script>
   </body>
 </html>

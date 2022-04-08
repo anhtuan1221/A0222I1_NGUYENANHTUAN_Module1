@@ -8,14 +8,12 @@
   </head>
   <body>
     <script>
-      let str = "anh-4anh-5anh-6";
-      let count = 0;
-      for (let i = 0; i < str.length; i++) {
-        if (str[i] == "4" || str[i] == "5" || str[i] == "6") {
-          count++;
-        }
+      function checkNumber(num) {
+        let x = !isNaN(num);
+        return x;
       }
-      document.write("Số nguyên âm là: " + count);
+      let a = parseInt(prompt("nhap so"));
+      document.write(checkNumber(a));
     </script>
   </body>
 </html>

@@ -7,15 +7,11 @@
     <title>Document</title>
   </head>
   <body>
+    <button onclick="alertMessage()">CLICK ME!</button>
     <script>
-      let str = "anh-4anh-5anh-6";
-      let count = 0;
-      for (let i = 0; i < str.length; i++) {
-        if (str[i] == "4" || str[i] == "5" || str[i] == "6") {
-          count++;
-        }
+      function alertMessage() {
+        alert("Xin chao");
       }
-      document.write("Số nguyên âm là: " + count);
     </script>
   </body>
 </html>

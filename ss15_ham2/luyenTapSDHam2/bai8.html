@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function arr(newarr) {
+        let number = [];
+        for (let i = newarr.length - 1; i >= 0; i--) {
+          number.push(newarr[i]);
+        }
+        document.write("Mảng 1 là " + newarr + "<br>");
+        document.write("Mảng 2 là " + number);
+      }
+      let n = prompt("Bạn muốn nhập bao nhiêu số ?");
+      let arr1 = [];
+      for (let i = 0; i < n; i++) {
+        arr1.push(prompt("Số thứ " + (i + 1) + " là: "));
+      }
+      arr(arr1);
+    </script>
+  </body>
+</html>

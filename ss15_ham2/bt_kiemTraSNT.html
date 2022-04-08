@@ -8,14 +8,23 @@
   </head>
   <body>
     <script>
-      let str = "anh-4anh-5anh-6";
+      function isPrime(number) {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+      let number = 2;
       let count = 0;
-      for (let i = 0; i < str.length; i++) {
-        if (str[i] == "4" || str[i] == "5" || str[i] == "6") {
+      while (count <= 10000) {
+        if (isPrime(number) == true) {
+          document.write(number + " ");
           count++;
         }
+        number++;
       }
-      document.write("Số nguyên âm là: " + count);
     </script>
   </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkkytu(str) {
+        let n = prompt("nhập vào mảng số lương");
+        let arr1 = [];
+        for (let i = 0; i < n; i++) {
+          arr1.push(prompt("Nhập sô " + (i + 1) + " là"));
+        }
+        let count = 0;
+        for (let i = 0; i < arr1.length; i++) {
+          if (arr1[i] == str) {
+            count++;
+          }
+          }
+          if (count == 0) {
+            count = -1;
+            document.write("Số lần xuất hiện là: " + count);
+          } else {
+            arr1.join("");
+            document.write("Số lần "+ str+" xuất hiện là: " + count);
+          }
+        
+      }
+
+      let str1 = prompt("nhập vào ký tự tuỳ thích");
+      checkkytu(str1);
+    </script>
+  </body>
+</html>

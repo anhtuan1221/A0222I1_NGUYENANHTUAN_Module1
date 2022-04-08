@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ngoisao">
+    <button onclick="str()">CLICK ME</button>
+    <p id="result">Chòm sao : </p>
+    <script>
+        // function str(){
+        //     let a = document.getElementById("ngoisao").value;
+        //     let arr1 =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        //     let arr2 =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        //         if(arr1.indexOf(a)!= -1){
+        //             let index = arr1.indexOf(a)
+        //             document.getElementById("result").innerHTML="Chòm sao :"+arr2[index];
+        //         }else{
+        //             document.getElementById("result").innerHTML="Chòm sao :Không tìm thấy";
+        //         }
+        //     }
+            function str(){
+                let a = document.getElementById("ngoisao").value;
+                let index =-1;
+                let arr1 =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+                let arr2 =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+                for(let i =0;i<arr1.length;i++){
+                    if(a== arr1[i]){
+                        index =i;
+                        document.getElementById("result").innerHTML="Chòm sao :"+arr2[index]; 
+                    }
+                }
+                if(index==-1){
+                    document.getElementById("result").innerHTML="Chòm sao :Không tìm thấy";
+                }
+            }
+
+    </script>
+</body>
+</html>

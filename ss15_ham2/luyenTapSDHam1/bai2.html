@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <span>Giá trị của </span>
+      <input type="number" oninput="input(this.value)" />
+      <span id="result">Sau khi tăng lên một là : </span>
+    </p>
+    <script>
+      function input(num) {
+        num = parseInt(num);
+        document.getElementById("result").innerHTML =
+          "Sau khi tăng lên một là :" + ++num;
+      }
+    </script>
+  </body>
+</html>
