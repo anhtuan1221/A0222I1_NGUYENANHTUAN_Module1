@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let str1 = "qwertyuiop";
-        let str2 = "asdfghjkl";
-        if(str1 == str2){
-            document.write("Hai chuỗi giống nhau");
-        }else {
-            document.write("Hai chuỗi không giống nhau");
+      let str1 = prompt("nhap vao chuỗi");
+      let str2 = prompt("nhap vao chuỗi");
+      let flag = true;
+      if (str1.length == str2.length) {
+        for (let i = 0; i < str1.length; i++) {
+          if (str1.charAt(i) != str2.charAt(i)) {
+            flag = false;
+            break;
+          }
         }
+      } else {
+        flag = false;
+      }
+      if (flag) {
+        alert("chuỗi giống nhau");
+      } else {
+        alert("chuỗi không  giống nhau");
+      }
     </script>
-    
-</body>
+  </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Temperature {
+        constructor(tem) {
+          this.tem = tem;
+        }
+        toF() {
+          return (9 / 5) * this.tem + 32;
+        }
+        toKelvin() {
+          return this.tem + 273, 15;
+        }
+      }
+      let temperature = new Temperature(prompt("Nhập nhiệt độ "));
+
+      document.write("Độ C: " + temperature.tem + "<br>");
+      document.write("Độ F: " + temperature.toF() + "<br>");
+      document.write("Độ kelvin: " + temperature.toKelvin() + "<br>");
+    </script>
+  </body>
+</html>

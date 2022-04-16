@@ -11,12 +11,19 @@
       function giathua(n) {
         let result = 1;
         n = parseInt(n);
-        for (let i = 1; i <= n; i++)
-         result *= i;
+        for (let i = 1; i <= n; i++) result *= i;
         document.write("Gia thừa của " + n + " la " + result);
         return result;
       }
-      a = prompt("nhap so");
+      a = prompt("nhập số");
+      while (true) {
+        if (a < 0) {
+          alert("nhập lại số dương");
+          a = prompt("nhap so dương");
+        } else {
+          break;
+        }
+      }
       giathua(a);
     </script>
   </body>

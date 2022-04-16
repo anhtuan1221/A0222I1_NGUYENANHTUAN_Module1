@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="200"></canvas>
+    <p id="result"></p>
+    <script>
+      class Rectangle {
+        constructor(width, height) {
+          this.height = height;
+          this.width = width;
+        }
+        chuvi() {
+          return (this.width + this.height) * 2;
+        }
+        dientich() {
+          return this.width * this.height;
+        }
+        drawRect() {
+          let ctx = document.getElementById("myCanvas").getContext("2d");
+          // ctx.fillStyle = "#ff0";
+          // ctx.fillRect(150, 100, this.width, this.height);
+          ctx.moveTo(0, 0);
+          ctx.lineTo(0, this.height);
+          ctx.moveTo(0, this.height);
+          ctx.lineTo(this.width, this.height);
+          ctx.moveTo(this.width, this.height);
+          ctx.lineTo(this.width, 0);
+          ctx.moveTo(this.width, 0);
+          ctx.lineTo(0, 0);
+          ctx.stroke();
+        }
+      }
+
+      let x = 400;
+      let y = 200;
+      let rectangle = new Rectangle(x, y);
+      rectangle.drawRect();
+      document.getElementById("result").innerHTML =
+        "Chu vi: " +
+        rectangle.chuvi() +
+        "<br>" +
+        "Diện tích : " +
+        rectangle.dientich();
+    </script>
+  </body>
+</html>

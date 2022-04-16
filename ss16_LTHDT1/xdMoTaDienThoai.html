@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Điện thoại Iphone</th>
+      </tr>
+      <tr>
+        <th><button onclick="onMobile()">Bật điện thoại</button></th>
+        <th><button onclick="offMobile()">Tắt điện thoại</button></th>
+        <th><button onclick="chargeMobile()">Sạc pin</button></th>
+        <th><button onclick="composeMessage()">Soạn tin nhắn</button></th>
+        <th><button onclick="inboxMessage()">Hộp thư gửi</button></th>
+      </tr>
+    </table>
+    <br />
+    <table>
+      <tr>
+        <th>Điện thoại nokia</th>
+      </tr>
+      <tr>
+        <th><button onclick="sentMessage()">Hộp thư đến</button></th>
+      </tr>
+    </table>
+    <script>
+      class Mobile {
+        constructor(pin, status, turnOnOff, sentMessage) {
+          this.pin = pin;
+          this.status = status;
+          this.turnOnOff = turnOnOff;
+          this.sentMessage = sentMessage;
+        }
+        //kiểm tra trạng thái điện thoại bật hay tắc.
+        turnOn() {
+          if (this.pin > 0) {
+            this.turnOnOff = true;
+            alert("Bật điện thoại thành công");
+          } else {
+            alert("Pin yếu");
+          }
+        }
+        turnoff() {
+          if (this.pin > 0) {
+            this.turnOnOff = false;
+            alert("tắt điện thoại thành công");
+          } else {
+            alert("Pin yếu");
+          }
+        }
+        // Nếu điên thoại chưa bật thì không thể sử dụng
+        statusMobile() {
+          if (this.pin > 0) {
+            if (this.turnOnOff) {
+              this.status = true;
+            } else {
+              this.status = false;
+            }
+          } else {
+            this.status = false;
+          }
+        }
+        //chức năng xạc pin điện thoại
+        chargeMobile() {
+          this.pin = 100;
+          alert("Tình trạng pin: " + this.pin + " % ");
+        }
+        //chức năng soạn tin nhắn
+        writeMessage() {
+          let message = prompt("Soạn tin nhắn");
+          this.sentMessage.push(message);
+        }
+        //chức năng nhận tin nhắn từ một chiếc mobile khác
+        viewInboxMessage() {
+          if (this.sentMessage.length > 0) {
+            for (let i = 0; i < this.sentMessage.length; i++) {
+              alert("Tin dến " + (i + 1) + " : " + this.sentMessage[i]);
+            }
+          } else {
+            alert("Tin đén trống");
+          }
+        }
+        //chức năng xem tin nhắn của hộp thư gửi.
+        viewSentMessage() {
+          if (this.sentMessage.length > 0) {
+            for (let i = 0; i < this.sentMessage.length; i++) {
+              alert("Tin đã gửi " + (i + 1) + " : " + this.sentMessage[i]);
+            }
+          } else {
+            alert("Chưa có tin gửi");
+          }
+        }
+        //Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị
+        afterUser() {
+          if (this.pin > 0) {
+            this.pin--;
+          } else {
+            alert("Pin yếu");
+          }
+        }
+      }
+      let mobile = new Mobile(10, true, true, []);
+      function onMobile() {
+        mobile.turnOn();
+        mobile.afterUser();
+      }
+      function offMobile() {
+        mobile.turnoff();
+        mobile.afterUser();
+      }
+      function chargeMobile() {
+        mobile.statusMobile();
+        if (mobile.status) {
+          mobile.chargeMobile();
+        } else {
+          alert("Bật điện thoại trước khi sử dụng");
+        }
+      }
+      function composeMessage() {
+        mobile.statusMobile();
+        if (mobile.status) {
+          mobile.writeMessage();
+          mobile.afterUser();
+        } else {
+          alert("Bật điện thoại trước khi sử dụng");
+        }
+      }
+      function sentMessage() {
+        mobile.statusMobile();
+        if (mobile.status) {
+          mobile.viewInboxMessage();
+          mobile.afterUser();
+        } else {
+          alert("Bật điện thoại trước khi sử dụng");
+        }
+      }
+      function inboxMessage() {
+        mobile.statusMobile();
+        if (mobile.status) {
+          mobile.viewSentMessage();
+          mobile.afterUser();
+        } else {
+          alert("Bật điện thoại trước khi sử dụng");
+        }
+      }
+    </script>
+  </body>
+</html>
