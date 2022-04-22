@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let menu = "Danh sách Menu: \n "
+      +"1. Cà phê\n"+" 2. Cam vắt\n"+" 3. Nước ép cà rốt\n"+" 4. Nước ép cà chua\n"+
+      " 5. Nước lọc\n"+" 6. Nước dừa\n"+" 7. Thoát gọi món và thanh toán\n";
+      let choose;
+      let price =0;
+      let total=0;
+      do{
+        choose = parseInt(prompt(menu));
+        switch(choose){
+          case 1:price=10000;
+          break;
+          case 2:price=15000;
+          break;
+          case 3:price=15000;
+          break;
+          case 4:price=15000;
+          break;
+          case 5:price=5000;
+          break;
+          case 6:price=20000;
+          break;
+          default:
+          continue;
+        }
+        let sl= parseInt(prompt(" giá của 1 sản phẩm "+price+"\n"+" xin mời nhập số lượng "));
+        total +=sl*price;
+      }while(choose!==7)
+      alert("Thành tiền "+total+" đồng");
+    </script>
+  </body>
+</html>

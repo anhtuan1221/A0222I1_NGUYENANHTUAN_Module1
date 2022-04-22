@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Lương Nhân Viên :</span><input type="number" id="input" />
+    <button onclick="tinh()">Tính</button><br />
+    <span>Thuế Thu Nhập :</span><span id="result1"></span><br />
+    <span>Lương Sau Thuế :</span><span id="result2"></span>
+    <script>
+      function tinh() {
+        let salary = document.getElementById("input").value;
+        if (salary > 15000000) {
+          let thue = salary * 0.02;
+          salary = salary - thue;
+          document.getElementById("result1").innerHTML = thue;
+          document.getElementById("result2").innerHTML = salary;
+        } else if (salary > 7000000) {
+          let thue = salary * 0.01;
+          salary = salary - thue;
+          document.getElementById("result1").innerHTML = thue;
+          document.getElementById("result2").innerHTML = salary;
+        } else {
+          let thue = salary * 0.005;
+          salary = salary - thue;
+          document.getElementById("result1").innerHTML = thue;
+          document.getElementById("result2").innerHTML = salary;
+        }
+      }
+    </script>
+  </body>
+</html>

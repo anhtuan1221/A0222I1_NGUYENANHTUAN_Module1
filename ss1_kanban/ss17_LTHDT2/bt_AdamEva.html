@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="eatAdam()">Adam</button>
+    <button onclick="eatEva()">Eva</button>
+
+    <script>
+      class Apple {
+        constructor(weight) {
+          this.weight = weight;
+        }
+        decrease() {
+          if (this.weight > 0) {
+            this.weight--;
+          } else {
+            alert("Đã ăn hêt táo");
+          }
+        }
+        isEmpty() {
+          if (this.weight > 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        getWeight() {
+          return this.weight;
+        }
+      }
+      class Human {
+        constructor(name, gender, weight) {
+          this.name = name;
+          this.gender = gender;
+          this.weight = weight;
+        }
+        isMale() {
+          this.gender = true;
+        }
+        setGender(gender) {
+          if(this.gender=="male"){
+            return true
+          }else {
+            return false;
+          }
+        }
+        checkApple(apple) {
+          apple.isEmpty();
+        }
+        eat(apple) {
+          apple.decrease();
+        }
+        say(apple) {
+          if (apple.weight>0) {
+            alert(this.name + " ăn 1 miếng táo");
+          } 
+        }
+        getName() {
+          return this.name;
+        }
+        setName(name) {
+          this.name = name;
+        }
+        getWeight() {
+          return this.weight;
+        }
+        setWeight(weight) {
+          this.weight = weight;
+        }
+      }
+      let apple = new Apple(10);
+      let eva = new Human("Eva", "female", 90);
+      let adam = new Human("Adam", "male", 100);
+      function eatAdam() {
+        adam.say(apple);
+        adam.eat(apple);
+        if (apple.weight>0) {
+          alert("Tổng còn : " + apple.weight + " lát táo");
+        } else {
+          alert("Hãy đi hái táo");
+        }
+      }
+      function eatEva() {
+        eva.say(apple);
+        eva.eat(apple);
+        if (apple.weight>0) {
+          alert("Tổng còn : " + apple.weight + " lát táo");
+        } else {
+          alert("Hãy đi hái táo");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let vowel = ["u", "e", "o", "a", "i", "U", "E", "O", "A", "I"];
+      let key = prompt("Nhập ký tự");
+      let flag = true;
+      for (let i = 0; i < vowel.length; i++) {
+        if (key == vowel[i]) {
+          document.write("ký tự nhập vào nguyên âm");
+          flag = false;
+          break;
+        }
+      }
+      if(flag){
+          document.write("ký tự nhập vào là phụ âm")
+      }
+    </script>
+  </body>
+</html>
