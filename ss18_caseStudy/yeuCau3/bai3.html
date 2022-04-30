@@ -11,15 +11,15 @@
       let numerators = [5, 2, 7];
       let denominators = [6, 3, 2];
       let max = numerators[0] / denominators[0];
-      let index =0
-      for(let i=0;i<numerators.length;i++){
-            let num =numerators[i]/denominators[i];
-            if(num>max){
-                max= num;
-                index =i;
-            }
+      let index = 0;
+      for (let i = 0; i < numerators.length; i++) {
+        let num = numerators[i] / denominators[i];
+        if (num > max) {
+          max = num;
+          index = i;
+        }
       }
-      document.write("Phân số lớn nhất là: " +max+" vị trí: "+index);
+      document.write("Phân số lớn nhất là: " + max + " vị trí: " + index);
     </script>
   </body>
 </html>

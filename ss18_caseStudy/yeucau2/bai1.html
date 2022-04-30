@@ -14,18 +14,19 @@
     <script>
       function tinh() {
         let salary = document.getElementById("input").value;
+        let thue =0
         if (salary > 15000000) {
-          let thue = salary * 0.02;
+          thue = salary * 0.02;
           salary = salary - thue;
           document.getElementById("result1").innerHTML = thue;
           document.getElementById("result2").innerHTML = salary;
         } else if (salary > 7000000) {
-          let thue = salary * 0.01;
+           thue = salary * 0.01;
           salary = salary - thue;
           document.getElementById("result1").innerHTML = thue;
           document.getElementById("result2").innerHTML = salary;
         } else {
-          let thue = salary * 0.005;
+          thue = salary * 0.005;
           salary = salary - thue;
           document.getElementById("result1").innerHTML = thue;
           document.getElementById("result2").innerHTML = salary;

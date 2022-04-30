@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sum() {
+        let m = parseInt(prompt("nhập số hàng của mảng"));
+        let n = parseInt(prompt("nhập số cột của mảng"));
+        let total = 0;
+        let arr1 = new Array(m);
+        for (let i = 0; i < arr1.length; i++) {
+          arr1[i] = new Array(n);
+          for (let j = 0; j < arr1[i].length; j++) {
+            arr1[i][j] = parseInt(
+              prompt("Nhập giá trị của hàng " + (i + 1) + " cột " + (j + 1))
+            );
+            let value = arr1[i][j];
+            if (value % 2 == 0) {
+              total += value;
+            }
+          }
+        }
+       // document.write(arr1);
+        return total;
+      }
+      let a = sum();
+      document.write("Tổng các số chẵn  là: " + a);
+    </script>
+  </body>
+</html>

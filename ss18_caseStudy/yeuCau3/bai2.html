@@ -9,31 +9,27 @@
   <body>
     <script>
       let a = [7, 2, 5, 3, 5, 3];
-      let b = [7, 2, 5, 6, 11, 10, 10, 4, 4, 3, 5, 3];
+      let b = [8, 2, 5, 6, 11, 10, 10, 4, 3, 5, 4, 3];
       let c = [];
       for (let i = 0; i < b.length; i++) {
-        let flag = false;
+        let flag = true;
         for (let j = 0; j < a.length; j++) {
-          if (a[j] === b[i]) {
-            flag = true;
-            break;
+          if (b[i]===a[j]) {
+            flag = false;
           }
         }
-        if (!flag) {
+        if (flag) {
           c.push(b[i]);
         }
       }
-
+      c.sort(function (a, b) {
+        return a - b;
+      });
       for (let k = 0; k < c.length; k++) {
         if (c[k] === c[k + 1]) {
           c.splice(k, 1);
         }
       }
-
-      c.sort(function (a, b) {
-        return a - b;
-      });
-
       document.write(c);
     </script>
   </body>

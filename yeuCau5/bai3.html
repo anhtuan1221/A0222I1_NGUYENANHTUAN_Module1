@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function minMax() {
+        let m = parseInt(prompt("nhập số hàng"));
+        let n = parseInt(prompt("nhập số cột"));
+        let arr = new Array(m);
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] = new Array(n);
+          for (let j = 0; j < arr[i].length; j++) {
+            arr[i][j] = parseInt(
+              prompt("Nhập giá trị số hàng: " + (i + 1) + " cột " + (j + 1))
+            );
+
+            max = arr[0][0];
+            min = arr[0][0];
+            if (arr[i][j] > max) {
+              max = arr[i][j];
+            } else if (arr[i][j] < min) {
+              min = arr[i][j];
+            }
+          }
+        }
+        document.write("Giá trị lớn nhất của mảng 2 chiều là: " + max + "<br>");
+        document.write("Giá trị nhỏ nhất của mảng 2 chiều là: " + min);
+      }
+      minMax();
+    </script>
+  </body>
+</html>

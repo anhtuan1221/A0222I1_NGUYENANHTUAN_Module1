@@ -11,14 +11,10 @@
       let h = 5;
       for (let i = 1; i <= h; i++) {
         for (let k = h; k > i; k--) {
-          document.write("&nbsp;&nbsp;");
+          document.write("&nbsp;&nbsp");
         }
-        for (let j = 1; j <=i * 2-1; j++) {
-          if ( i == h || j == 1 || j == i *2-1) {
-            document.write("*");
-          } else {
-            document.write("&nbsp;&nbsp;");
-          }
+        for (let j = 1; j <= i * 2 - 1; j++) {
+          document.write("*");
         }
         document.write("<br>");
       }

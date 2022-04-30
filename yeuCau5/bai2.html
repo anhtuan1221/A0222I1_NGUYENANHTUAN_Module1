@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(number) {
+        if (number < 2) {
+          return false;
+        } else if (number > 2) {
+          for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+      function array2d() {
+        let m = 4;
+        let n = 3;
+        let count =0
+
+        let arr2d = new Array(m);
+        for (let i = 0; i < arr2d.length; i++) {
+          arr2d[i] = new Array(n);
+          for (let j = 0; j < arr2d[i].length; j++) {
+            arr2d[i][j] = parseInt(
+              prompt("Nhập giá trị hàng: " + (i + 1) + "cột" + (j + 1))
+            );
+            if (isPrime(arr2d[i][j])) {
+                count++;
+            }
+          }
+        }
+        document.write("Số lượng số nguyên tố có trong mảng là: "+ count)
+      }
+      array2d();
+    </script>
+  </body>
+</html>
