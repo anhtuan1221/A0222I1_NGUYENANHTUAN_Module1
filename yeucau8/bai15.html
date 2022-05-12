@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1" style="border-collapse: collapse">
+      <tr>
+        <th>Mã số sách</th>
+        <th>Tên sách</th>
+        <th>Năm suất bản</th>
+        <th>số quyển</th>
+        <th>Tình trạng</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="thêm sách đã có" onclick="add(i)" />
+        </td>
+        <td>
+          <input type="button" value="thêm sách mới" onclick="addnew(i)" />
+        </td>
+        <td><input type="button" value="mượn sách" onclick="lent(i)" /></td>
+        <td>
+          <input type="button" value="hiên thị sách" onclick="display(i)" />
+        </td>
+      </tr>
+    </table>
+    <p id="display"></p>
+    <script>
+      class QuanLiSach {
+        constructor(maSach, tenSach, nam, soQuyen, tinhtrang) {
+          this.maSach = maSach;
+          this.tenSach = tenSach;
+          this.nam = nam;
+          this.soQuyen = soQuyen;
+          this.tinhtrang = tinhtrang;
+        }
+        settenSach(name1,name2,name3) {
+            this.name1=name1;
+            this.name2=name2;
+            this.name3=name3;
+        }
+        display() {
+          let table =
+            ' <table border="1" style="border-collapse: collapse"> ' +
+            " <tr>" +
+            " <th>Mã số sách</th>" +
+            " <th>Tên sách</th>" +
+            " <th>Năm suất bản</th>" +
+            " <th>số quyển</th>" +
+            " <th>Tình trạng</th>" +
+            " </tr>";
+          for (let i = 0; i < settenSach.length; i++) {
+            talbe +=
+              "<tr>" +
+              "<td></td>" +
+              "<td>"+settenSach[i] +"</td>" +
+              " <td></td>" +
+              " <td></td>" +
+              "  <td></td>" +
+              " </tr>" +
+              " <tr>" +
+              '<td><input type="button" value="thêm sách đã có" onclick="add('+i+')"></td>' +
+              '  <td><input type="button" value="thêm sách mới" onclick="addnew('+i+')"></td>' +
+              ' <td><input type="button" value="mượn sách" onclick="lent('+i+')"></td>' +
+              ' <td><input type="button" value="hiên thị sách" onclick="display('+i+')"></td>' +
+              " </tr>";
+          }
+          table += " </table>";
+        }
+      }
+      let quanlisach = new QuanLiSach();
+      quanlisach.settenSach(toan,van,anh)
+      document.getElementById("display").innerHTML = quanlisach;
+    </script>
+  </body>
+</html>

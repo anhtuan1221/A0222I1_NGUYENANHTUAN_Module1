@@ -11,16 +11,18 @@
       let arrA = [];
       let arrB = [];
       let result = [];
-      let n = prompt("nhap do dai mang");
+      let n = parseInt(prompt("nhap do dai mang"));
       for (let i = 0; i < n; i++) {
         arrA.push(parseInt(prompt("phan tu thu " + (i + 1))));
       }
-      let m = prompt("nhap do dai mang");
+      let m =parseInt(prompt("nhap do dai mang"));
       for (let i = 0; i < m; i++) {
         arrB.push(parseInt(prompt("phan tu thu " + (i + 1))));
       }
       for (let i = 0; i < m; i++) {
-        if (arrA.indexOf(arrB[i] === -1 && result.indexOf(arrB[i]) === -1)) {
+        if (arrA.indexOf(arrB[i])== -1 && result.indexOf(arrB[i]) == -1) {
+          
+        //  console.log(arrB[i]);
           result.push(arrB[i]);
         }
       }

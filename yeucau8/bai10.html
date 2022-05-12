@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function standardized(name) {
+        let result = "";
+        name = name.trim().toLowerCase();
+        let nameArray = Array.from(name);
+        for (let i = 0; i < nameArray.length; i++) {
+          if (nameArray[i] === " " && nameArray[i + 1] === " ") {
+            for (let j = i + 1; j < nameArray.length; j++) {
+              nameArray[j] == nameArray[j + 1];
+            }
+          }
+        }
+        nameArray.join("");
+        document.write(nameArray);
+        for (let i = 0; i < nameArray.length; i++) {
+          if ((i = 0 || nameArray.charAt(i - 1) == " ")) {
+            result += nameArray.charAt(i).toUpperCase();
+          } else {
+            result += nameArray[i];
+          }
+        }
+        document.write(result);
+      }
+      let a = prompt("nhập tên ");
+      standardized(a);
+    </script>
+  </body>
+</html>

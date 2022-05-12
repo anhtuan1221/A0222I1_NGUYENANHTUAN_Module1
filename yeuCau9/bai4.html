@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quản lý điện thoại</h1>
+    <button onclick="addValue()">Thêm điện thoại</button>
+    <p id="result"></p>
+   
+</body>
+<script>
+    let listProduct=[["001","Iphone12pro","Apple","12000000"]];
+    function display(data){
+        let tableString=' <table border="1" style="border-collapse: collapse;" >'+
+       ' <tr>'+
+         '   <th>Mã điện thoại</th>'+
+         '   <th>Tên</th>'+
+        '  <th>Hãng Sản Xuất</th>'+
+           ' <th>Giá</th>'+
+           ' <th>Delete</th>'+
+      '  </tr>';
+      for(let i=0;i<data.length;i++){
+       tableString +=' <tr>'+
+          '  <td>'+data[i][0]+'</td>'+
+          '  <td>'+data[i][1]+'</td>'+
+          '  <td>'+data[i][2]+'</td>'+
+            ' <td>'+data[i][3]+'</td>'+
+          '  <td><button onclick="deleteList('+i+')">Delete</button></td>'+
+       ' </tr>';
+    }
+    tableString+=' </table>';
+    document.getElementById("result").innerHTML=tableString;
+    }
+    display(listProduct);
+    function deleteList(index){
+        let conf= confirm("bạn có muốn xoá không"+listProduct[index]);
+            if(conf){
+            listProduct.splice(index,1);
+            }else{
+            alert("Bạn không muốn xoá")
+            }
+        display(listProduct);
+    }
+    function checkMaSo(value){
+       let check=false;
+        for(i=0;i<listProduct.length;i++){
+            if(listProduct[i][0]==value){
+                check =true;
+            }
+        }
+        return check;
+    }
+    class Dienthoai{
+        constructor(){
+            this.madt="";
+            this.ten="";
+            this.hangsx="";
+            this.gia=""
+        }
+        addMadt(){
+            let madt=prompt("nhập mã điện thoại");
+            while(checkMaSo(madt)||madt==""){
+                madt=prompt("nhập lai mã điện thoại");
+            }
+            this.madt=madt;
+        }
+        addTen(){
+            let ten= prompt("nhập tên điện thoại");
+            while(ten==""){
+                ten= prompt("nhập lai tên điện thoại");
+            }
+            this.ten=ten;
+        }
+        addHangsx(){
+            let hangsx= prompt("Nhập hãng sản xuất");
+            while(hangsx==""){
+                hangsx= prompt("Nhập lại hãng sản xuất");
+            }
+            this.hangsx=hangsx;
+        }
+        addGia(){
+            let gia= parseInt(prompt("nhập giá sản phẩm"));
+            while(isNaN(gia)||gia==""){
+                gia= parseInt(prompt("nhập lai giá sản phẩm"));
+            }
+            this.gia=gia;
+        }
+        addMang(){
+            let arr=[].concat(this.madt,this.ten,this.hangsx,this.gia);
+            listProduct[listProduct.length]=arr;
+            display(listProduct);
+        }
+    }
+    function addValue(){
+        let dienthoai= new Dienthoai();
+        dienthoai.addMadt();
+        dienthoai.addTen();
+        dienthoai.addHangsx();
+        dienthoai.addGia();
+        dienthoai.addMang();
+        alert("Đã thêm điện thoại thành công");
+    }
+</script>
+</html>

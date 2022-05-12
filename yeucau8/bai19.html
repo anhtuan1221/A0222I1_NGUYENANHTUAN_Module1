@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ứng dụng  sổ tiết kiệm</h1><br>
+    <button onclick="taoso()">Tạo sổ tiết kiệm</button>
+    <p id="result"></p>
+   
+    <script>
+        let listProduct=[["001", "AB","nguyễn văn a", "123456", "04/12/1996","5000000"]];
+        
+        function display(data){
+            let tableString=' <table border="1" style="border-collapse: collapse;">'+
+      '  <tr>'+
+           ' <th>STT</th>'+
+           ' <th>Mã số </th>' +
+           ' <th>Loại tiết kiệm</th>'+
+           ' <th>Họ tên khách hàng </th>'+
+           ' <th>Chứng minh nhân dân</th>'+
+           ' <th>Ngày mở sổ</th>'+
+           ' <th>số tiền gửi</th>'+
+           ' <th>Delete</th>'+
+        '</tr>';
+        for(let i=0;i<data.length;i++){
+       tableString += '<tr>'+
+           ' <td>'+(i+1)+'</td>' +
+           ' <td>'+data[i][0]+'</td> '+
+           ' <td>'+data[i][1]+'</td> '+
+           ' <td>'+data[i][2]+'</td> '+
+           ' <td>'+data[i][3]+'</td> '+
+            '<td>'+data[i][4]+'</td>' +
+           ' <td>'+data[i][5]+'</td> '+
+           ' <td><input type="button" value="Delete" onclick="deletelist('+i+')"></td> '+
+       ' </tr>';
+    }
+    tableString+= '</table>'
+    document.getElementById("result").innerHTML=tableString;
+    }
+    display(listProduct);
+    function deletelist(index){
+        let conf= confirm("bạn có muốn xoá không"+listProduct[index]);
+        if(conf){
+            listProduct.splice(index,1);
+        }else{
+            alert("Bạn không muốn xoá")
+        }
+        display(listProduct);
+    }
+    function checkMaSo(value){
+        let check = false;
+        for(let i=0;i<listProduct.length;i++){
+            if(listProduct[i][0]==value){
+                check = true;
+            }
+        }
+        return check
+    }
+    class Sotietkiem{
+        constructor() {
+            this.maSo="";
+            this.loaitietkiem ="";
+            this.hoten ="";
+            this.cmnd = "";
+            this.ngaymoso= "";
+            this.sotiengui = "";
+        }
+        addMaSo(){
+            let maso = prompt("nhap ma so");
+            while(maso.length>5||checkMaSo(maso)||maso==""){
+                maso =prompt("moi ban nhap lai ma so");
+            }
+            this.maSo=maso;
+        }
+        addLoaitietkiem(){
+            let loaiTietKiem = prompt("nhap loai tiet kiem");
+            while(loaiTietKiem.length>10||loaiTietKiem==""){
+                loaiTietKiem = prompt("moi ban  nhap lai loai tiet kiem");
+            }
+            this.loaitietkiem= loaiTietKiem;
+        }
+        addHoten(){
+            let hoten=prompt("nhap ho ten");
+            while(hoten>30||hoten==""){
+                hoten=prompt("nhap lai ho ten");
+            }
+            this.hoten=hoten;
+        }
+        addcmnd(){
+            let cmnd = parseInt(prompt("nhap cmnd"));
+            while(isNaN(cmnd)||cmnd==""){
+                cmnd = parseInt(prompt("nhap lai cmnd"));
+            }
+            this.cmnd = cmnd;
+        }
+        addngay(){
+            let ngayMoSo= prompt("nhap ngay mo so");
+            while(ngayMoSo==""){
+                ngayMoSo= prompt("nhap lai ngay mo so");
+            }
+            this.ngayMoSo=ngayMoSo;
+        }
+        addSoTienGui(){
+            let sotiengui= parseInt(prompt("nhap so tien gui"));
+            while(isNaN(sotiengui)||sotiengui==""){
+                sotiengui= parseInt(prompt("nhap so tien gui"));
+            }
+            this.sotiengui=sotiengui;
+        }
+        addMang(){
+            let arr=[].concat(this.maSo, this.loaitietkiem, this.hoten, this.cmnd,this.ngayMoSo,this.sotiengui);
+            listProduct[listProduct.length]=arr;
+            display(listProduct);
+        }
+    }
+    function taoso(){
+        let soTietKiem=new Sotietkiem();
+        soTietKiem.addMaSo();
+        soTietKiem.addLoaitietkiem();
+        soTietKiem.addHoten();
+        soTietKiem.addcmnd();
+        soTietKiem.addngay();
+        soTietKiem.addSoTienGui();
+        soTietKiem.addMang();
+        alert("Đã thêm sổ tiết kiệm thành công")
+    }
+    </script>
+</body>
+</html>
